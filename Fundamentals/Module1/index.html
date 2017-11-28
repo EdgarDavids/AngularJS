@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html ng-app="module1HWApp">
+    <head>
+        <title>Module 1 Homework</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></link>
+    </head>
+    <body ng-Controller="timeController">
+        <div class="container">
+            <h1>Module 1 Homework</h1>
+            <h2>{{timespan}}</h2>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script type="text/javascript"> 
+            var module1HWApp = angular.module('module1HWApp',[]);
+            module1HWApp.constant("timeConst", {clock: Date()});
+            module1HWApp.controller("timeController",["$scope", "timeConst", function($scope,timeConst){
+                $scope.timespan="The current Date is: "+timeConst.clock;
+            }]);
+        </script>
+    </body>
+</html>
